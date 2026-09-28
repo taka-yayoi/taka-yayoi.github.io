@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>弥生隆明 Taka Yayoi</title>
+<meta name="description" content="Databricks Japan Senior Specialist Solutions Architect、青山学院大学プロジェクト准教授。生成AIとデータの技術を、動くコードと日本語の解説で届けています。">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="弥生隆明 Taka Yayoi">
+<meta property="og:description" content="生成AIとデータの技術を、動くコードと日本語の解説で届けています。登壇・執筆・講義・ハンズオンのご依頼はこちら。">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@taka_aki">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%232C4A8C'/%3E%3Ctext x='32' y='44' font-size='36' text-anchor='middle' fill='white' font-family='serif'%3E弥%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#FAFAF8;
+  --ink:#1B2130;
+  --muted:#5A6272;
+  --faint:#8A919E;
+  --rule:#E2E4E8;
+  --accent:#2C4A8C;
+  --accent-soft:#E8EDF7;
+  --serif:"Zen Old Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Noto Sans JP","Hiragino Sans","Yu Gothic",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#14171D; --ink:#E6E8EC; --muted:#A3AAB6; --faint:#7C8492;
+    --rule:#2A2F38; --accent:#8FA9E6; --accent-soft:#1E2636;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#14171D; --ink:#E6E8EC; --muted:#A3AAB6; --faint:#7C8492;
+  --rule:#2A2F38; --accent:#8FA9E6; --accent-soft:#1E2636;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:var(--sans); font-size:16px; line-height:1.85;
+  padding-inline:20px; padding-block:0 64px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:760px; margin:0 auto}
+a{color:var(--accent); text-decoration:none; text-underline-offset:3px}
+a:hover{text-decoration:underline}
+a:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:2px}
+
+/* nav */
+nav{
+  position:sticky; top:env(safe-area-inset-top,0px); z-index:5;
+  background:var(--bg); border-bottom:1px solid var(--rule);
+  margin-inline:-20px; padding:12px 20px;
+}
+nav .wrap{display:flex; flex-wrap:wrap; gap:6px 22px; align-items:baseline}
+nav .name{font-family:var(--serif); font-weight:700; color:var(--ink); margin-right:auto}
+nav a.link{color:var(--muted); font-size:14px}
+nav a.link:hover{color:var(--accent); text-decoration:none}
+
+/* header */
+header{padding-block:72px 48px; border-bottom:1px solid var(--rule)}
+header .roman{font-family:var(--mono); font-size:13px; letter-spacing:.12em; color:var(--faint); text-transform:uppercase}
+header h1{font-family:var(--serif); font-weight:700; font-size:clamp(40px,8vw,60px); line-height:1.15; margin:8px 0 20px; letter-spacing:.04em}
+header .lead{font-size:17px; color:var(--ink); max-width:36em; margin:0 0 24px}
+.roles{list-style:none; padding:0; margin:0 0 28px; display:grid; gap:4px}
+.roles li{color:var(--muted); font-size:15px}
+.roles li b{color:var(--ink); font-weight:500}
+.links{display:flex; flex-wrap:wrap; gap:8px 20px; font-family:var(--mono); font-size:14px}
+.links span{color:var(--faint)}
+
+/* figures */
+.figures{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:40px}
+.fig .n{font-family:var(--serif); font-size:30px; font-weight:700; line-height:1.2; font-variant-numeric:tabular-nums}
+.fig .l{font-size:13px; color:var(--muted); line-height:1.5}
+@media (max-width:520px){.figures{grid-template-columns:1fr; gap:14px}}
+
+/* sections */
+section{padding-block:56px 8px; scroll-margin-top:56px}
+h2{font-family:var(--serif); font-weight:700; font-size:26px; margin:0 0 6px; letter-spacing:.03em}
+.sub{color:var(--muted); font-size:14px; margin:0 0 28px}
+h3{font-size:14px; font-weight:700; color:var(--muted); letter-spacing:.08em; margin:36px 0 8px}
+
+/* row list: label gutter + body */
+.rows{list-style:none; padding:0; margin:0}
+.rows li{
+  display:grid; grid-template-columns:132px 1fr; gap:4px 24px;
+  padding-block:16px; border-top:1px solid var(--rule);
+}
+.rows li:last-child{border-bottom:1px solid var(--rule)}
+.rows .when{font-family:var(--mono); font-size:13px; color:var(--faint); padding-top:3px; font-variant-numeric:tabular-nums}
+.rows .what{font-weight:500}
+.rows .note{color:var(--muted); font-size:14px; line-height:1.7; margin-top:2px}
+.tag{
+  display:inline-block; font-family:var(--mono); font-size:11px; letter-spacing:.06em;
+  color:var(--accent); background:var(--accent-soft);
+  padding:1px 8px; border-radius:3px; margin-left:8px; vertical-align:2px;
+}
+@media (max-width:560px){
+  .rows li{grid-template-columns:1fr}
+  .rows .when{padding-top:0}
+}
+
+/* books */
+.books{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px}
+.book{border:1px solid var(--rule); border-radius:4px; padding:22px 22px 20px; display:flex; flex-direction:column; gap:6px}
+.book .t{font-family:var(--serif); font-size:20px; font-weight:700; line-height:1.45}
+.book .pub{font-family:var(--mono); font-size:13px; color:var(--faint)}
+.book p{margin:6px 0 0; font-size:14px; color:var(--muted); line-height:1.75}
+
+.vols{list-style:none; padding:0; margin:8px 0 0; display:grid; gap:4px; font-size:14px}
+.vols li{display:flex; justify-content:space-between; gap:12px; border-top:1px solid var(--rule); padding-top:6px}
+.vols span{font-family:var(--mono); font-size:12px; color:var(--faint); white-space:nowrap; font-variant-numeric:tabular-nums}
+p.body{max-width:38em}
+header .stance{color:var(--muted); font-size:15px; max-width:38em; margin:0 0 24px}
+header .lead{margin-bottom:10px}
+.cta{margin:32px 0 0; font-weight:500}
+
+.services{display:grid; grid-template-columns:repeat(2,1fr); gap:0 32px}
+.svc{border-top:1px solid var(--rule); padding-block:14px 6px}
+.svc .k{font-family:var(--serif); font-weight:700; font-size:18px}
+.svc p{margin:4px 0 0; color:var(--muted); font-size:14px; line-height:1.7}
+@media (max-width:520px){.services{grid-template-columns:1fr}}
+
+.feature{border:1px solid var(--rule); border-radius:4px; padding:28px; display:flex; flex-direction:column; gap:10px}
+.feature .eyebrow{font-family:var(--mono); font-size:12px; color:var(--faint); letter-spacing:.04em}
+.feature .ft{font-family:var(--serif); font-weight:700; font-size:clamp(26px,5vw,34px); line-height:1.3; text-wrap:balance}
+.feature .fsub{color:var(--muted); font-size:15px; margin-top:-4px}
+.feature p{margin:0; max-width:38em}
+.pillars{list-style:none; padding:0; margin:4px 0; display:flex; flex-wrap:wrap; gap:8px}
+.pillars li{font-family:var(--mono); font-size:12px; color:var(--accent); background:var(--accent-soft); padding:3px 10px; border-radius:3px}
+.flinks{display:flex; flex-wrap:wrap; gap:6px 20px; font-size:14px}
+.coauthors{font-size:13px; color:var(--faint); border-top:1px solid var(--rule); padding-top:10px; margin-top:4px}
+@media (max-width:520px){.feature{padding:20px}}
+
+.contact-links{display:grid; gap:0}
+.contact-links a{display:flex; justify-content:space-between; gap:16px; border-top:1px solid var(--rule); padding-block:12px}
+.contact-links a:last-child{border-bottom:1px solid var(--rule)}
+.contact-links span{font-family:var(--mono); font-size:13px; color:var(--faint)}
+footer{margin-top:72px; padding-top:20px; border-top:1px solid var(--rule); color:var(--faint); font-size:13px; font-family:var(--mono)}
+</style>
+
+</head>
+<body>
+<nav aria-label="セクション">
+  <div class="wrap">
+    <span class="name">弥生隆明</span>
+    <a class="link" href="#services">ご依頼</a>
+    <a class="link" href="#featured">代表作</a>
+    <a class="link" href="#talks">登壇</a>
+    <a class="link" href="#writing">記事</a>
+    <a class="link" href="#community">コミュニティ・講義</a>
+    <a class="link" href="#profile">経歴</a>
+    <a class="link" href="#contact">連絡先</a>
+  </div>
+</nav>
+
+<div class="wrap">
+<header>
+  <div class="roman">Takaaki Yayoi</div>
+  <h1>弥生 隆明</h1>
+  <p class="lead">生成AIとデータの技術を、動くコードと日本語の解説で届けています。</p>
+  <p class="stance">新しい機能は、自分で動かしてから書きます。ドキュメントを読むだけでは分からないつまずきどころまで含めて伝えることを大事にしています。</p>
+  <ul class="roles">
+    <li><b>Databricks Japan</b> Senior Specialist Solutions Architect</li>
+    <li><b>青山学院大学</b> プロジェクト准教授</li>
+    <li><b>JEDAI</b> Databricksユーザーコミュニティ 運営</li>
+  </ul>
+  <div class="figures">
+    <div class="fig"><div class="n">2,400+</div><div class="l">Qiitaに公開した記事</div></div>
+    <div class="fig"><div class="n">3,000+</div><div class="l">JEDAIのメンバー数</div></div>
+    <div class="fig"><div class="n">20年+</div><div class="l">Databricks以前の自然言語処理・機械学習の経験</div></div>
+  </div>
+  <p class="cta"><a href="#contact">ご依頼・ご相談はこちら →</a></p>
+</header>
+
+<section id="services">
+  <h2>お引き受けしていること</h2>
+  <p class="sub">扱うテーマ: LLMOps、AIエージェントの評価と運用、生成AIの業務活用、Databricksの新機能と学び方</p>
+  <div class="services">
+    <div class="svc">
+      <div class="k">登壇</div>
+      <p>カンファレンス、勉強会、社内イベントでの講演やLT。</p>
+    </div>
+    <div class="svc">
+      <div class="k">執筆・翻訳</div>
+      <p>技術書の執筆と翻訳、技術記事の寄稿。</p>
+    </div>
+    <div class="svc">
+      <div class="k">講義</div>
+      <p>大学や講座での、データとAIの講義。</p>
+    </div>
+    <div class="svc">
+      <div class="k">ハンズオン</div>
+      <p>Databricks Free Editionを使った教材の設計と、当日の運営。</p>
+    </div>
+  </div>
+</section>
+
+<section id="featured">
+  <h2>代表作</h2>
+  <article class="feature">
+    <div class="eyebrow">書籍 · 技術評論社 · 2026年4月 · 共著</div>
+    <a class="ft" href="https://gihyo.jp/book/2026/978-4-297-15573-5">MLflowで実践するLLMOps</a>
+    <div class="fsub">生成AIアプリケーションの実験管理と品質保証</div>
+    <p>生成AIアプリの実験管理、評価、運用を、MLflow 3の4本柱で通して解説した日本語初の一冊です。</p>
+    <ul class="pillars">
+      <li>Tracing</li><li>Evaluate &amp; Monitor</li><li>Prompt Registry</li><li>AI Gateway</li>
+    </ul>
+    <p>発売後に1,000部に届きました。刊行後も、書籍のリポジトリを更新しながら、Qiitaの記事やもくもく会で内容を補っています。</p>
+    <p class="flinks">
+      <a href="https://gihyo.jp/book/2026/978-4-297-15573-5">書籍ページ</a>
+      <a href="https://qiita.com/taka_yayoi/items/05f16a5bf5661cc2de02">出版のお知らせ</a>
+      <a href="https://qiita.com/taka_yayoi/items/44eba61afdd77b85e16d">1,000部に届いたときの記事</a>
+    </p>
+    <div class="coauthors">共著者: 弥生隆明、渡辺祐貴、大内山浩、平田東夢、河村春孝</div>
+  </article>
+</section>
+
+<section id="talks">
+  <h2>登壇</h2>
+  <p class="sub">スライドは <a href="https://speakerdeck.com/taka_aki">Speaker Deck</a> で公開しています。</p>
+  <ul class="rows">
+    <li><div class="when">2026-10-22</div><div><a class="what" href="https://seisei-ai.connpass.com/event/403469/">LLM-as-a-Judgeは本当に信頼できるのか――評価器を評価する話</a><span class="tag">予定</span><div class="note">LLMによる自動評価の設計と、人間の判断との一致度で評価器そのものを検証する方法。</div></div></li>
+    <li><div class="when">2026-07-15</div><div><div class="what">DatabricksにおけるMCPソリューション</div><div class="note">MCP Developer Lab (東京ミッドタウン)。Managed MCPとUnity Catalogによるガバナンスについて。</div></div></li>
+    <li><div class="when">2026-04</div><div><a class="what" href="https://speakerdeck.com/taka_aki/2026nian-4yue-ban-sheng-cheng-ainiyoruqing-bao-sisutemuhenoinpakuto">[2026年4月版] 生成AIによる情報システムへのインパクト</a></div></li>
+    <li><div class="when">—</div><div><a class="what" href="https://speakerdeck.com/taka_aki/sheng-cheng-ainiyoru-detasaiensunojin-hua-baibudetasaiensugamotarasuxin-siiwei-lai">生成AIによるデータサイエンスの進化</a><div class="note">バイブデータサイエンスがもたらす新しい未来</div></div></li>
+    <li><div class="when">—</div><div><a class="what" href="https://speakerdeck.com/taka_aki/hanzuondexue-bu-databricks-jhazimetedatabricks">ハンズオンで学ぶ Databricks - はじめてのDatabricks</a></div></li>
+  </ul>
+</section>
+
+<section id="writing">
+  <h2>記事</h2>
+  <p class="sub">Databricksの新機能を検証した記事を中心に、Qiitaで書いています。</p>
+  <ul class="rows">
+    <li><div class="when">2026-09</div><div><a class="what" href="https://qiita.com/taka_yayoi/items/bcb8f5729e162d851e79">集計済みのビューを配るのをやめる。Databricksメトリクスビューを触ってみた</a></div></li>
+    <li><div class="when">2026-09</div><div><a class="what" href="https://qiita.com/taka_yayoi/items/b83967d5625b250accb6">AIはQ&amp;Aだけの道具ではない: 方向性を渡し、結果を返してサイクルを回す</a></div></li>
+    <li><div class="when">2026-08</div><div><a class="what" href="https://qiita.com/taka_yayoi/items/ab110946862e63dca9f6">パス文字列でもバイナリでもない。DatabricksのFILE型を試す</a></div></li>
+    <li><div class="when">2026-07</div><div><div class="what">CodingAgentOps 2部作</div><div class="note">コーディングエージェントを運用するためのフレームワークの提案と、Claude CodeのトレースをMLflowで可視化・評価する実践編。<br><a href="https://qiita.com/taka_yayoi/items/b795a609a039387d8d23">前編</a> · <a href="https://qiita.com/taka_yayoi/items/37673e51728c64172755">実践編</a></div></div></li>
+    <li><div class="when">2026</div><div><a class="what" href="https://qiita.com/taka_yayoi/items/7df29c4c809b469a6865">「作って終わり」を卒業する: Databricks Free EditionでLLMOpsを1周する</a></div></li>
+  </ul>
+  <p class="body" style="margin-top:20px"><a href="https://qiita.com/taka_yayoi">すべての記事を見る →</a></p>
+</section>
+
+<section id="books">
+  <h2>そのほかの書籍</h2>
+  <p class="sub">共著と翻訳</p>
+  <div class="books">
+    <article class="book">
+      <div class="t">Omnigentによるメタハーネス入門</div>
+      <div class="pub">翔泳社 · 全3巻 · 電子書籍 · 共著</div>
+      <p>コーディングエージェントのハーネスを外側から管理するメタハーネス、Omnigentの入門書です。主著者は長谷川亮さん。</p>
+      <ul class="vols">
+        <li><a href="https://www.shoeisha.co.jp/book/detail/9784825200722">(1) 基礎編</a><span>2026-09-30</span></li>
+        <li><a href="https://www.shoeisha.co.jp/book/detail/9784825200739">(2) チーム運用編</a><span>2026-09-30</span></li>
+        <li>(3) エンタープライズ編<span>2026-10-31 予定</span></li>
+      </ul>
+    </article>
+    <article class="book">
+      <a class="t" href="https://www.shoeisha.co.jp/book/detail/9784798182285">Apache Spark徹底入門</a>
+      <div class="pub">翔泳社 · 2024年4月 · 翻訳</div>
+      <p>Apache Spark、MLflow、Delta Lakeの仕組みから効率的な実装までを扱う中級入門書です。日本語版オリジナルとしてLLMの活用方法も収録しています。</p>
+    </article>
+  </div>
+</section>
+
+<section id="community">
+  <h2>コミュニティ・講義</h2>
+  <p class="sub">使う人が集まり、手を動かせる場をつくっています。</p>
+  <h3>JEDAI (Japan Enduser Group | Databricks Innovation)</h3>
+  <p class="body">2021年から続くDatabricksのユーザーコミュニティです。もくもく会、ミートアップ、貢献者を称えるJEDAI Orderなどを運営しています。</p>
+  <ul class="rows">
+    <li><div class="when">2026-10-21</div><div><a class="what" href="https://jedai.connpass.com/event/407004/">Databricksメトリクスビューはじめてのもくもく会</a><span class="tag">予定</span><div class="note">教材: <a href="https://github.com/taka-yayoi/metric_view_mokumoku">taka-yayoi/metric_view_mokumoku</a></div></div></li>
+    <li><div class="when">2026</div><div><div class="what">著者と学ぶMLflow LLMOpsもくもく会</div><div class="note">書籍の共著者との対談と、Free Editionでのハンズオン。教材: <a href="https://github.com/taka-yayoi/jedai-llmops-mokumoku">taka-yayoi/jedai-llmops-mokumoku</a></div></div></li>
+    <li><div class="when">—</div><div><div class="what">はじめてのDatabricks もくもく会</div><div class="note">教材: <a href="https://github.com/taka-yayoi/jedai-first-databricks">taka-yayoi/jedai-first-databricks</a></div></div></li>
+  </ul>
+  <h3>大学での講義</h3>
+  <p class="body">Databricks Free Editionを使い、学生が実際にデータとAIを扱う講義を担当しています。</p>
+  <ul class="rows">
+    <li><div class="when">2026 夏</div><div><div class="what">滋賀大学「機械学習と生成AIによるビジネスデータサイエンス」実践講座</div><div class="note">コスモエネルギーHD、Databricks、滋賀大学による講座。機械学習とデータエンジニアリングを担当。</div></div></li>
+    <li><div class="when">—</div><div><div class="what">青山学院大学 (ADPISA-Z)</div></div></li>
+    <li><div class="when">—</div><div><div class="what">工学院大学</div></div></li>
+  </ul>
+</section>
+
+<section id="profile">
+  <h2>経歴</h2>
+  <p class="sub">製造業、総合電機メーカー、コンサルティングファームを経てDatabricksへ。</p>
+  <ul class="rows">
+    <li><div class="when">現在</div><div><div class="what">青山学院大学 プロジェクト准教授</div><div class="note">生成AIに関するアドバイザーとして、講義と学生プロジェクトに関わっています。特別研究員を経て就任。</div></div></li>
+    <li><div class="when">2020 –</div><div><div class="what">Databricks Japan</div><div class="note">Senior Specialist Solutions Architect。生成AI、Databricks Apps、データエンジニアリングを担当しています。</div></div></li>
+    <li><div class="when">2020 以前</div><div><div class="what">製造業・総合電機メーカー・コンサルティングファーム</div><div class="note">約20年にわたり、自然言語処理と機械学習に携わりました。</div></div></li>
+  </ul>
+  <h3>資格</h3>
+  <ul class="rows">
+    <li><div class="when">2026</div><div><div class="what">Databricks Certified Context Engineer Associate</div></div></li>
+    <li><div class="when">2026</div><div><div class="what">Databricks Certified Data Engineer Professional</div><div class="note">2回目の再認定</div></div></li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>連絡先</h2>
+  <p class="sub">登壇、執筆、講義、ハンズオンのご依頼やご相談は、XのDMでお送りください。</p>
+  <div class="contact-links">
+    <a href="https://x.com/taka_aki">X (ご依頼・ご相談) <span>@taka_aki</span></a>
+    <a href="https://qiita.com/taka_yayoi">Qiita <span>@taka_yayoi</span></a>
+    <a href="https://speakerdeck.com/taka_aki">Speaker Deck <span>@taka_aki</span></a>
+    <a href="https://github.com/taka-yayoi">GitHub <span>taka-yayoi</span></a>
+  </div>
+</section>
+
+<footer>© 2026 Takaaki Yayoi</footer>
+</div>
+
+</body>
+</html>
