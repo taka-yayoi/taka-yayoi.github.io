@@ -82,6 +82,11 @@ header .lead{font-size:17px; color:var(--ink); max-width:36em; margin:0 0 24px}
 .roles{list-style:none; padding:0; margin:0 0 28px; display:grid; gap:4px}
 .roles li{color:var(--muted); font-size:15px}
 .roles li b{color:var(--ink); font-weight:500}
+.head-top{display:flex; gap:40px; align-items:flex-start}
+.head-top .intro{min-width:0; flex:1 1 auto}
+.portrait{flex:0 0 auto}
+.portrait img{width:220px; aspect-ratio:3/4; object-fit:cover; object-position:center top; border-radius:14px; display:block; background:var(--rule); border:1px solid var(--rule)}
+@media (max-width:560px){.head-top{flex-direction:column; gap:24px}.portrait img{width:170px}}
 .links{display:flex; flex-wrap:wrap; gap:8px 20px; font-family:var(--mono); font-size:14px}
 .links span{color:var(--faint)}
 
@@ -173,15 +178,20 @@ footer{margin-top:72px; padding-top:20px; border-top:1px solid var(--rule); colo
 
 <div class="wrap">
 <header>
-  <div class="roman">Takaaki Yayoi</div>
-  <h1>弥生 隆明</h1>
-  <p class="lead">生成AIとデータの技術を、動くコードと日本語の解説で届けています。</p>
-  <p class="stance">新しい機能は、自分で動かしてから書きます。ドキュメントを読むだけでは分からないつまずきどころまで含めて伝えることを大事にしています。</p>
-  <ul class="roles">
-    <li><b>Databricks Japan</b> Senior Specialist Solutions Architect</li>
-    <li><b>青山学院大学</b> プロジェクト准教授</li>
-    <li><b>JEDAI</b> Databricksユーザーコミュニティ 運営</li>
-  </ul>
+  <div class="head-top">
+    <div class="portrait"><img src="speaker_photo_portrait.jpg" alt="弥生隆明の顔写真" width="220" height="293"></div>
+    <div class="intro">
+      <div class="roman">Takaaki Yayoi</div>
+      <h1>弥生 隆明</h1>
+      <p class="lead">生成AIとデータの技術を、動くコードと日本語の解説で届けています。</p>
+      <p class="stance">新しい機能は、自分で動かしてから書きます。ドキュメントを読むだけでは分からないつまずきどころまで含めて伝えることを大事にしています。</p>
+      <ul class="roles">
+        <li><b>Databricks Japan</b> Senior Specialist Solutions Architect</li>
+        <li><b>青山学院大学</b> プロジェクト准教授</li>
+        <li><b>JEDAI</b> Databricksユーザーコミュニティ 運営</li>
+      </ul>
+    </div>
+  </div>
   <div class="figures">
     <div class="fig"><div class="n">2,400+</div><div class="l">Qiitaに公開した記事</div></div>
     <div class="fig"><div class="n">3,000+</div><div class="l">JEDAIのメンバー数</div></div>
@@ -238,7 +248,7 @@ footer{margin-top:72px; padding-top:20px; border-top:1px solid var(--rule); colo
   <p class="sub">スライドは <a href="https://speakerdeck.com/taka_aki">Speaker Deck</a> で公開しています。</p>
   <ul class="rows">
     <li><div class="when">2026-10-22</div><div><a class="what" href="https://seisei-ai.connpass.com/event/403469/">LLM-as-a-Judgeは本当に信頼できるのか――評価器を評価する話</a><span class="tag">予定</span><div class="note">LLMによる自動評価の設計と、人間の判断との一致度で評価器そのものを検証する方法。</div></div></li>
-    <li><div class="when">2026-07-15</div><div><div class="what">DatabricksにおけるMCPソリューション</div><div class="note">MCP Developer Lab (東京ミッドタウン)。Managed MCPとUnity Catalogによるガバナンスについて。</div></div></li>
+    <li><div class="when">2026-07-15</div><div><a class="what" href="https://devlab.geodesiccap.com/">DatabricksにおけるMCPソリューション</a><div class="note">MCP Developer Lab (東京ミッドタウン)。Managed MCPとUnity Catalogによるガバナンスについて。</div></div></li>
     <li><div class="when">2026-04</div><div><a class="what" href="https://speakerdeck.com/taka_aki/2026nian-4yue-ban-sheng-cheng-ainiyoruqing-bao-sisutemuhenoinpakuto">[2026年4月版] 生成AIによる情報システムへのインパクト</a></div></li>
     <li><div class="when">—</div><div><a class="what" href="https://speakerdeck.com/taka_aki/sheng-cheng-ainiyoru-detasaiensunojin-hua-baibudetasaiensugamotarasuxin-siiwei-lai">生成AIによるデータサイエンスの進化</a><div class="note">バイブデータサイエンスがもたらす新しい未来</div></div></li>
     <li><div class="when">—</div><div><a class="what" href="https://speakerdeck.com/taka_aki/hanzuondexue-bu-databricks-jhazimetedatabricks">ハンズオンで学ぶ Databricks - はじめてのDatabricks</a></div></li>
