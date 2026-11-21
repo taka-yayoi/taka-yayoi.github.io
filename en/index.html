@@ -17,6 +17,11 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://taka-yayoi.github.io/og.png">
 <meta name="twitter:site" content="@taka_aki">
+<link rel="canonical" href="https://taka-yayoi.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://taka-yayoi.github.io/">
+<link rel="alternate" hreflang="en" href="https://taka-yayoi.github.io/en/">
+<link rel="alternate" hreflang="x-default" href="https://taka-yayoi.github.io/">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Takaaki Yayoi", "alternateName": ["弥生隆明", "Taka Yayoi"], "url": "https://taka-yayoi.github.io/en/", "image": "https://taka-yayoi.github.io/portrait-660.jpg", "worksFor": {"@type": "Organization", "name": "Databricks Japan"}, "affiliation": {"@type": "CollegeOrUniversity", "name": "Aoyama Gakuin University"}, "sameAs": ["https://qiita.com/taka_yayoi", "https://speakerdeck.com/taka_aki", "https://github.com/taka-yayoi", "https://x.com/taka_aki", "https://www.linkedin.com/in/takaaki-yayoi/"]}</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%232C4A8C'/%3E%3Ctext x='32' y='44' font-size='36' text-anchor='middle' fill='white' font-family='serif'%3E弥%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -73,6 +78,13 @@ nav .wrap{display:flex; flex-wrap:wrap; gap:6px 22px; align-items:baseline}
 nav .name{font-family:var(--serif); font-weight:700; color:var(--ink); margin-right:auto}
 nav a.link{color:var(--muted); font-size:14px}
 nav a.link:hover{color:var(--accent); text-decoration:none}
+
+@media (max-width:560px){
+  nav .wrap{flex-wrap:nowrap; overflow-x:auto; white-space:nowrap; gap:18px; scrollbar-width:none}
+  nav .wrap::-webkit-scrollbar{display:none}
+  nav .name, nav a.link{flex:0 0 auto}
+  nav .name{margin-right:0}
+}
 
 /* header */
 header{padding-block:72px 48px; border-bottom:1px solid var(--rule)}
@@ -180,7 +192,7 @@ footer{margin-top:72px; padding-top:20px; border-top:1px solid var(--rule); colo
 <div class="wrap">
 <header>
   <div class="head-top">
-    <div class="portrait"><img src="../speaker_photo_portrait.jpg" alt="Portrait of Takaaki Yayoi" width="220" height="293"></div>
+    <div class="portrait"><img src="../portrait-660.jpg" alt="Portrait of Takaaki Yayoi" width="220" height="293"></div>
     <div class="intro">
       <div class="roman">弥生 隆明</div>
       <h1>Takaaki Yayoi</h1>
@@ -254,8 +266,8 @@ footer{margin-top:72px; padding-top:20px; border-top:1px solid var(--rule); colo
     <li><div class="when">2026-10-22</div><div><a class="what" href="https://seisei-ai.connpass.com/event/403469/">Can You Really Trust LLM-as-a-Judge? Evaluating the Evaluator</a><div class="note">Seisei AI Kai Vol.3 in Mita. Designing automated evaluation with LLMs, and validating the evaluator itself by its agreement with human judgment.<br><a href="https://speakerdeck.com/taka_aki/llm-as-a-judge-ha-hontouni-shinrai-dekiru-no-ka-hyoukaki-o-hyouka-suru-hanashi">Slides</a></div></div></li>
     <li><div class="when">2026-07-15</div><div><a class="what" href="https://devlab.geodesiccap.com/">MCP Solutions on Databricks</a><div class="note">MCP Developer Lab (Tokyo Midtown). On Managed MCP and governance with Unity Catalog.</div></div></li>
     <li><div class="when">2026-04</div><div><a class="what" href="https://speakerdeck.com/taka_aki/2026nian-4yue-ban-sheng-cheng-ainiyoruqing-bao-sisutemuhenoinpakuto">[April 2026 edition] The Impact of Generative AI on Information Systems</a></div></li>
-    <li><div class="when">—</div><div><a class="what" href="https://speakerdeck.com/taka_aki/sheng-cheng-ainiyoru-detasaiensunojin-hua-baibudetasaiensugamotarasuxin-siiwei-lai">The Evolution of Data Science with Generative AI</a><div class="note">The new future brought by vibe data science.</div></div></li>
-    <li><div class="when">—</div><div><a class="what" href="https://speakerdeck.com/taka_aki/hanzuondexue-bu-databricks-jhazimetedatabricks">Hands-on with Databricks — Your First Databricks</a></div></li>
+    <li><div class="when">2025-11-15</div><div><a class="what" href="https://speakerdeck.com/taka_aki/sheng-cheng-ainiyoru-detasaiensunojin-hua-baibudetasaiensugamotarasuxin-siiwei-lai">The Evolution of Data Science with Generative AI</a><div class="note">Public lecture at Aoyama Gakuin University. The new future brought by vibe data science.</div></div></li>
+    <li><div class="when">2025</div><div><a class="what" href="https://speakerdeck.com/taka_aki/hanzuondexue-bu-databricks-jhazimetedatabricks">Hands-on with Databricks — Your First Databricks</a></div></li>
   </ul>
 </section>
 
@@ -275,10 +287,6 @@ footer{margin-top:72px; padding-top:20px; border-top:1px solid var(--rule); colo
     <li><div class="when">2026-10</div><div><a class="what" href="https://qiita.com/taka_yayoi/items/5e5b4baa7781ff6008bd">Trying ai_decide in Japanese: calling Jev-style judge models from SQL</a><div class="note">In Japanese.</div></div></li>
     <li><div class="when">2026-09</div><div><a class="what" href="https://mlflow.org/blog/jev-llm-judge-part-2/">Can Jev replace your LLM judge? Part 2: Testing harder answers</a><div class="note">Official MLflow blog. Co-authored with Yuki Watanabe. Validates the structured LLM judge model Jev on a harder answer set and proposes routing only uncertain judgments to a larger model.</div></div></li>
     <li><div class="when">2026-09</div><div><a class="what" href="https://qiita.com/taka_yayoi/items/bcb8f5729e162d851e79">Stop shipping pre-aggregated views: trying out Databricks Metric Views</a><div class="note">In Japanese.</div></div></li>
-    <li><div class="when">2026-09</div><div><a class="what" href="https://qiita.com/taka_yayoi/items/b83967d5625b250accb6">AI isn't just a Q&amp;A tool: give it direction, get results, and close the loop</a><div class="note">In Japanese.</div></div></li>
-    <li><div class="when">2026-08</div><div><a class="what" href="https://qiita.com/taka_yayoi/items/ab110946862e63dca9f6">Not a path string, not a binary: trying Databricks' FILE type</a><div class="note">In Japanese.</div></div></li>
-    <li><div class="when">2026-07</div><div><div class="what">CodingAgentOps (two-part series)</div><div class="note">A proposed framework for operating coding agents, plus a hands-on part that visualizes and evaluates Claude Code traces with MLflow. In Japanese.<br><a href="https://qiita.com/taka_yayoi/items/b795a609a039387d8d23">Part 1</a> · <a href="https://qiita.com/taka_yayoi/items/37673e51728c64172755">Hands-on</a></div></div></li>
-    <li><div class="when">2026</div><div><a class="what" href="https://qiita.com/taka_yayoi/items/7df29c4c809b469a6865">Graduating from "build and forget": one full lap of LLMOps on Databricks Free Edition</a><div class="note">In Japanese.</div></div></li>
   </ul>
   <p class="body" style="margin-top:20px"><a href="https://qiita.com/taka_yayoi">See all articles →</a></p>
 </section>
@@ -323,13 +331,13 @@ footer{margin-top:72px; padding-top:20px; border-top:1px solid var(--rule); colo
   <ul class="rows">
     <li><div class="when">2026-10-21</div><div><a class="what" href="https://jedai.connpass.com/event/407004/">First mokumoku session on Databricks Metric Views</a><div class="note">Materials: <a href="https://github.com/taka-yayoi/metric_view_mokumoku">taka-yayoi/metric_view_mokumoku</a> · <a href="https://speakerdeck.com/taka_aki/databricks-hajimete-no-mokumokukai">Slides</a> · <a href="https://qiita.com/taka_yayoi/items/0b9a70f57ac47df6d8ba">Event report</a></div></div></li>
     <li><div class="when">2026</div><div><a class="what" href="https://jedai.connpass.com/event/399094/">"Graduating from build and forget" — MLflow LLMOps mokumoku with the authors</a><div class="note">A conversation with the book's co-authors and a hands-on on Free Edition.<br>Materials: <a href="https://github.com/taka-yayoi/jedai-llmops-mokumoku">taka-yayoi/jedai-llmops-mokumoku</a> · <a href="https://speakerdeck.com/taka_aki/zuo-tutezhong-wari-wozu-ye-suru-mlflowdeshi-jian-surullmops-zhu-zhe-toxue-bu-mokumokuhui">Slides</a></div></div></li>
-    <li><div class="when">—</div><div><div class="what">Your First Databricks mokumoku session</div><div class="note">Materials: <a href="https://github.com/taka-yayoi/jedai-first-databricks">taka-yayoi/jedai-first-databricks</a></div></div></li>
+    <li><div class="when">Summer 2026</div><div><a class="what" href="https://jedai.connpass.com/event/396166/">Your First Databricks mokumoku session (Summer 2026)</a><div class="note">Materials: <a href="https://github.com/taka-yayoi/jedai-first-databricks">taka-yayoi/jedai-first-databricks</a> · <a href="https://speakerdeck.com/taka_aki/hasimetenodatabricksmokumokuhui">Slides</a></div></div></li>
   </ul>
   <h3>University lectures</h3>
   <p class="body">Using Databricks Free Edition, I teach courses where students work hands-on with data and AI.</p>
   <ul class="rows">
     <li><div class="when">Summer 2026</div><div><div class="what">Shiga University practical course: "Business Data Science with Machine Learning and Generative AI"</div><div class="note">A course by Cosmo Energy Holdings, Databricks, and Shiga University. I taught machine learning and data engineering.</div></div></li>
-    <li><div class="when">—</div><div><a class="what" href="https://adpisa.si.aoyama.ac.jp/adpisa-z/">Aoyama Gakuin University — Aoyama Information Systems Architect Program (ADPISA-Z)</a><div class="note">A certificate program for working professionals.</div></div></li>
+    <li><div class="when">2026</div><div><a class="what" href="https://adpisa.si.aoyama.ac.jp/adpisa-z/">Aoyama Gakuin University — Aoyama Information Systems Architect Program (ADPISA-Z)</a><div class="note">A certificate program for working professionals. I teach the lecture "The Impact of Generative AI on Information Systems".<br><a href="https://speakerdeck.com/taka_aki/seisei-ai-niyoru-jouhou-shisutemu-heno-inpakuto-2026-toshi-11-tsukiban">Slides, November 2026 edition</a> (in Japanese)</div></div></li>
     <li><div class="when">—</div><div><div class="what">Kogakuin University</div></div></li>
   </ul>
 </section>
@@ -351,8 +359,9 @@ footer{margin-top:72px; padding-top:20px; border-top:1px solid var(--rule); colo
 
 <section id="contact">
   <h2>Contact</h2>
-  <p class="sub">For talks, writing, lectures, or hands-on workshops, please reach out via DM on X.</p>
+  <p class="sub">For talks, writing, lectures, or hands-on workshops, please reach out by email or via DM on X.</p>
   <div class="contact-links">
+    <a href="mailto:takaakiyayoi@gmail.com">Email (inquiries) <span>takaakiyayoi@gmail.com</span></a>
     <a href="https://x.com/taka_aki">X (inquiries) <span>@taka_aki</span></a>
     <a href="https://www.linkedin.com/in/takaaki-yayoi/">LinkedIn <span>takaaki-yayoi</span></a>
     <a href="https://qiita.com/taka_yayoi">Qiita <span>@taka_yayoi</span></a>
